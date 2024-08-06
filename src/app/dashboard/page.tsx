@@ -6,6 +6,7 @@ import SignOut from "./signOut";
 import { CustomUser } from "@/type";
 import User from "@/models/user";
 import UploadImage from "./uploadImage";
+import Image from "next/image";
 
 export default async function Dashboard() {
   const session = await getServerSession(authOptions);
@@ -21,7 +22,7 @@ export default async function Dashboard() {
         <div className="w-[40rem] h-[20rem] bg-blue-800 rounded-xl p-4 flex items-center justify-center gap-3 shadow-xl shadow-white relative">
           <div className="flex items-center justify-between gap-3 text-white">
             {session.user!.image ? (
-              <img
+              <Image
                 src={session.user!.image}
                 alt={session.user!.name ?? ""}
                 className="rounded-full h-32 w-32 p-1 border-2 border-red-600 shadow-lg"
@@ -101,7 +102,7 @@ export default async function Dashboard() {
                           <td className="whitespace-nowrap px-4 py-4">
                             <div className="flex items-center">
                               <div className="h-10 w-10 flex-shrink-0">
-                                <img
+                                <Image
                                   className="h-10 w-10 rounded-full object-cover"
                                   src={person.avatar}
                                   alt=""
@@ -142,7 +143,7 @@ export default async function Dashboard() {
         {
           // Display user avatar
           session.user!.image && (
-            <img
+            <Image
               src={session.user!.image}
               alt={session.user!.name ?? ""}
               className="rounded-full h-16 w-16 mb-4"

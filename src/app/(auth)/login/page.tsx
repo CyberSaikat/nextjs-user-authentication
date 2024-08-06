@@ -19,8 +19,6 @@ export default function Login() {
 
   const router = useRouter();
 
-  const params = useSearchParams();
-
   const handleLogin = () => {
     setLoading(true);
     axios
@@ -82,11 +80,6 @@ export default function Login() {
           <h2 className="text-center text-2xl font-bold leading-tight text-black">
             Login
           </h2>
-          {params.has("message") && (
-            <div className="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
-              <p>{params.get("message")}</p>
-            </div>
-          )}
           <form action="#" method="POST" className="mt-8">
             <div className="space-y-5">
               <div>
@@ -176,7 +169,7 @@ export default function Login() {
             </button>
           </div>
           <p className="mt-4 text-center text-base text-gray-600">
-            Don't have an account?{" "}
+            Don&#39;t have an account?{" "}
             <Link
               href="/register"
               className="font-medium text-black transition-all duration-200 hover:underline"
