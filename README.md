@@ -30,18 +30,18 @@ This project is a simple user authentication system built with Next.js and NextA
 2. cd your-repo-name
 3. Install dependencies:
 ```bash
-    npm install
-    # or
-    yarn install
+npm install
+# or
+yarn install
 ```
 4. Set up environment variables:
 Create a `.env.local` file in the root directory and add the necessary environment variables (e.g., database connection, NextAuth secret).
 
 5. Run the development server:
 ```bash
-    npm install
-    # or
-    yarn install
+npm install
+# or
+yarn install
 ```
 6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
