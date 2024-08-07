@@ -23,6 +23,8 @@ export default async function Dashboard() {
           <div className="flex items-center justify-between gap-3 text-white">
             {session.user!.image ? (
               <Image
+                width={128}
+                height={128}
                 src={session.user!.image}
                 alt={session.user!.name ?? ""}
                 className="rounded-full h-32 w-32 p-1 border-2 border-red-600 shadow-lg"
@@ -103,6 +105,8 @@ export default async function Dashboard() {
                             <div className="flex items-center">
                               <div className="h-10 w-10 flex-shrink-0">
                                 <Image
+                                  width={40}
+                                  height={40}
                                   className="h-10 w-10 rounded-full object-cover"
                                   src={person.avatar}
                                   alt=""
@@ -144,6 +148,8 @@ export default async function Dashboard() {
           // Display user avatar
           session.user!.image && (
             <Image
+              width={64}
+              height={64}
               src={session.user!.image}
               alt={session.user!.name ?? ""}
               className="rounded-full h-16 w-16 mb-4"
