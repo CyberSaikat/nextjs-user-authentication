@@ -59,7 +59,8 @@ export const authOptions: AuthOptions = {
       const incomingUser = user;
 
       if (account?.provider != "credentials") {
-        await User.findOne({ email: email }).then(async (user) => {
+        connect();
+        await User.findOne({ email: email ?? incomingUser.email }).then(async (user) => {
           if (user) {
             return true;
           } else {
@@ -103,6 +104,10 @@ export const authOptions: AuthOptions = {
       user: CustomUser;
     }) {
       session.user = token.user as CustomUser;
+      const fetchedUser = await User.findOne({ email: session.user.email });
+      if (fetchedUser) {
+        session.user.role = fetchedUser.role;
+      }
       return session;
     },
   },

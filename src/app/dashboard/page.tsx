@@ -98,7 +98,7 @@ export default async function Dashboard() {
                     <tbody className="divide-y divide-gray-200 bg-white">
                       {people.map((person) => (
                         <tr
-                          key={person.name}
+                          key={person.email}
                           className="divide-x divide-gray-200"
                         >
                           <td className="whitespace-nowrap px-4 py-4">
@@ -108,7 +108,7 @@ export default async function Dashboard() {
                                   width={40}
                                   height={40}
                                   className="h-10 w-10 rounded-full object-cover"
-                                  src={person.avatar}
+                                  src={person.avatar ?? "/images/avatar.png"}
                                   alt=""
                                 />
                               </div>
